@@ -11,9 +11,11 @@ var app = express();
 var PORT = process.env.PORT || 8070;
 
 
-app.use(bodyParser.urlencoded({ extended: false}))
+// Sets up the Express app to handle data parsing
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-app.use(bodyParser.json())
+
 
 
 //requiring html route file on sever. 
