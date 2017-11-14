@@ -20,8 +20,10 @@ app.use(bodyParser.json());
 
 //requiring html route file on sever. 
 require('./app/routing/htmlRoutes.js')(app);
+require('./app/routing/api.js')(app);
 
 //console.log allows us to know check whether the server is running.
 app.listen(PORT, function(){
-    console.log("App listening on PORT: " + PORT);
+    console.log("App listening on PORT: " + "http://localhost:" + PORT);
 });
+
