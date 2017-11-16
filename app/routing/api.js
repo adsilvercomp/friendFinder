@@ -2,52 +2,70 @@ var friendData = require("../data/friends.js");
 //the api route is for the data. this route page will determine what the user sees
 //as well as what data the user is able to post to the server to store.
 
-// var u = friendData.pop();
-// console.log("u: " + u);
-// var f = friendData;
-// console.log("f: " + f.keys());
-// console.log(friendData);
 
 //practicing solution
-// return the friends array minus the user
-//then use a loop with recursive loop to compare each individual friend with the user
-// function FriendsLoop(){
-//     var user = friendData.pop();
-//     var friends = friendData;
-//     compare(user, friends);
-//     // console.log("user: " + user.scores);
-//     // console.log("friends: " + friends.scores);
-// }
+
+// this function returns the friends array minus the user
+function FriendsLoop() {
+    var friends = [];
+    for (var y = 0; y < friendData.length - 1; y++) {
+        friends.push(friendData[y].scores);
+    }
+    return friends;
+}
+
+// then use a recursive loop to loop through all of the friends
+//pass the individual friends and user into the compare function
+function recursiveFriendLoop() {
+    //set a counter at 0 so that the first person in the array is measured first.
+    var person = 0;
+    // console.log(person);
+    var uNumber = friendData.length - 1;
+    // console.log(uNumber);
+    var user = friendData[uNumber].scores;
+    // console.log(user);
+    var friendScoresArr = FriendsLoop();
+
+    console.log("friends");
+    console.log(friendScoresArr[person]);
 
 
-// // console.log(friendData[user].scores);
-function compare(user) {
-//      //you still have to figure out how to compare everyone in the array to the user
 
-    //this is returning the second to last person in the array 
-    var friends = friendData.length - 2;
-    //user is the last person in the friendsArray
-    var user = friendData.length - 1;
-    // var userDifference = [];
-    // var friendDifference = [];
+    if (person < friendScoresArr.length) {
+         console.log(friendScoresArr[person]);
+         console.log(user);
+       
+            compare(friendScoresArr[person], user);
+             
+        
+        person ++; 
+    }
+}
+recursiveFriendLoop();
+
+
+// console.log(friendData[user].scores);
+function compare(friendScoreArr, user) {
+
     var totalDifference = []
 
     for (var x = 0; x < 10; x++) {
-        if (friendData[user].scores[x] !== friendData[friends].scores[x]) {
-            // userDifference.push(friendData[user].scores[x]);
-            // friendDifference.push(friendData[friends].scores[x]);
-            //this is only recording the first set of numbers that are different. 
-            totalDifference.push(Math.abs(friendData[user].scores[x] - friendData[friends].scores[x]));
-            // console.log(friendData[user].scores[x]);
-            // console.log(friendData[friends].scores[x]);
+        
+            // console.log(user);
 
-        }
+            totalDifference.push(Math.abs(friendScoreArr[x] - user[x]));
 
+        
+        
     }
-    return totalDifference;
+    console.log("difference");
+    console.log(totalDifference);
+    finalDifference(totalDifference);
+    console.log(finalDifference(totalDifference) +3);
 }
 
-console.log(compare());
+// console.log("compare");
+// console.log(compare());
 
 
 
@@ -55,12 +73,15 @@ function addDifference(total, num) {
     return total + num;
 }
 
-function finalDifference() {
-    var dif = compare().reduce(addDifference);
+function finalDifference(totalDifference) {
+    console.log("number");
+    console.log(totalDifference);
+    var dif = totalDifference.reduce(addDifference);
+    console.log("..")
+    console.log(dif);
     return dif;
 }
 
-console.log("total difference: " + finalDifference());
 
 
 

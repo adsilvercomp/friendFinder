@@ -7,6 +7,12 @@ var friendsArray = [
         scores: [5, 4, 3, 2, 5, 5, 5, 4, 6, 7]
     },
     {
+
+        name: "Sam",
+        photo: "http://www.how-to-draw-funny-cartoons.com/image-files/cartoon-woman-010.jpg",
+        scores: [2, 4, 6, 2, 9, 5, 4, 4, 3, 7]
+    },
+    {
         name: "Matt",
         photo: "https://usercontent2.hubstatic.com/13006797.jpg",
         scores: [5, 4, 5, 2, 5, 5, 3, 4, 2, 7]
