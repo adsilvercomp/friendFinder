@@ -5,83 +5,6 @@ var friendData = require("../data/friends.js");
 //nest a loop inside of another loop. the outer loop grabs the friend
 // the inner loop compares the scores on the current friend 
 
-//** My program is calculating the difference between the friends and the user, but I am having a hard
-//time directly comparing the absolute difference between friend arrays because I cannot push them into 
-// a single array
-// My functions that compare the various friend arrays with the user array are wrapped inside of a loop, that loops through all of the friends in the friends array. As a result I am having a hard time returning the differences to a single array where I can compare them.
-
-//practicing solution
-
-// // this function returns the friends array minus the user
-// function FriendsLoop() {
-//     var friends = [];
-//     for (var y = 0; y < friendData.length - 1; y++) {
-//         friends.push(friendData[y].scores);
-//     }
-//     return friends;
-// }
-
-
-// // then loop through all of the friends
-// //pass the individual friend's as well as the user's score into the compare function
-// function friendArrayLoop() {
-//     var person;
-//     // console.log(person);
-//     var uNumber = friendData.length - 1;
-//     // console.log(uNumber);
-//     var user = friendData[uNumber].scores;
-//     // console.log(user);
-//     var friendScoresArr = FriendsLoop();
-
-
-
-//     for (var x = 0; x < friendScoresArr.length; x++) {
-//         //set a counter called person = to the iterating variable
-//         person = x;
-//         //use the person variable to loop through all of the individual friendScoresArrs.
-//         console.log(friendScoresArr[person]);
-//         //pass the friend's and user's arrays into the the compare function inside the loop so that all of the friends are compared to the user. 
-//         compare(friendScoresArr[person], user);
-
-
-//         // console.log(friendData[user].scores);
-//         function compare(friendScoreArr, user) {
-
-//             var totalDifference = [];
-
-//             for (var x = 0; x < 10; x++) {
-
-//                 // console.log(user);
-
-//                 totalDifference.push(Math.abs(friendScoreArr[x] - user[x]));
-
-//             }
-//             // console.log("difference");
-//             // console.log(totalDifference);
-//             finalDifference(totalDifference);
-//             console.log("difference " + finalDifference(totalDifference));
-//         }
-
-
-
-//         function addDifference(total, num) {
-//             return total + num;
-//         }
-
-//         function finalDifference(totalDifference) {
-//             // console.log("number");
-//             console.log(totalDifference);
-//             var dif = totalDifference.reduce(addDifference);
-//             // console.log("..")
-//             // console.log("dif" + dif);
-//             return dif;
-//         }
-
-//     }
-
-
-// }
-// friendArrayLoop();
 
 
 
@@ -135,17 +58,16 @@ module.exports = function (app) {
             console.log(smallestDif);
             //loop through the allDifs array. 
             for (var x=0; x<allDifs.length; x++){
-                //if smallestDif=== alldifs[i]
+                //if smallestDif === alldifs[i]
                 if(smallestDif === allDifs[x]){
                     console.log("This is the one");
                     console.log(allDifs[x]);
-                    console.log("this is friendData[x]");
                     console.log(friendData[x]);
+                    
                     // closestFriend.push(friendData[x]);
                     
                 }
-                console.log("this is the closest friend");
-                console.log(closestFriend);
+            
             }
             
             
