@@ -31,8 +31,7 @@ module.exports = function (app) {
 
         // //*****loop through the friend scores
             for (var j = 0; j < friendData[i].scores.length; j++) {
-        
-
+                
         // //*****the variable dif now equals the absolute difference between the friends and the user.
                 dif =  Math.abs(parseInt(userData["scores[]"][j]) - friendData[i].scores[j]);
                 console.log(dif);
@@ -62,8 +61,9 @@ module.exports = function (app) {
               console.log(number);
               console.log(friendData[number]);
         //*****this pushes the userData to the friendArray
-        // friendData.push(userData);
-        // res.json(match);
+        res.json(friendData[number]);
+        friendData.push(userData);
+        
     
 //after these first two forloops you should end up with an array of arrays
 //the total difference of the friends that first submitted the form and the friend files.
