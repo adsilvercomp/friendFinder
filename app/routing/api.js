@@ -7,20 +7,15 @@ var friendData = require("../data/friends.js");
 
 
 
-//why is app being passed into this function?
+
 module.exports = function (app) {
     app.post("/api/friends", function (req, res) {
         // console.log(res);
         // //*****the variable userData is the body of the request object
         var userData = req.body;
         console.log(userData);
-        // //*****this is an object where the friend with the lowest difference will be stored
-        var match = {
-            name: "name to replace",
-            photo: "link to replace",
-            diff: 1000
-        };
-        
+       
+     
         // //******this loops through all of the friends in friends.js
         var allDifs = [];
         closestFriend = [];
@@ -43,8 +38,8 @@ module.exports = function (app) {
             
         
         }
-        //unsorted version of array for the purposes of matching the smallest difference with it's position in the friendData array.
-        var unsortedDifs = allDifs.slice(0,4);
+        //unsorted version of array for the purposes of matching the smallest difference with its position in the friendData array.
+        var unsortedDifs = allDifs.slice(0, friendData.length);
         console.log("unsorted");
         console.log(unsortedDifs);
         //sort the allDifs array and select the number at position 0
